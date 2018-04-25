@@ -5,12 +5,12 @@
     <name>AboutDialog</name>
     <message>
         <location filename="../forms/aboutdialog.ui" line="14"/>
-        <source>About Gostcoin</source>
+        <source>About SPbCoin</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../forms/aboutdialog.ui" line="53"/>
-        <source>&lt;b&gt;Gostcoin&lt;/b&gt; version</source>
+        <source>&lt;b&gt;SPbCoin&lt;/b&gt; version</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -55,6 +55,11 @@
         <source>The Gostcoin developers</source>
         <translation type="unfinished"></translation>
     </message>
+	<message>
+        <location filename="../aboutdialog.cpp" line="19"/>
+        <source>The SPbCoin developers</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>AddressBookPage</name>
@@ -95,7 +100,7 @@
     </message>
     <message>
         <location filename="../forms/addressbookpage.ui" line="99"/>
-        <source>Sign a message to prove you own a Gostcoin address</source>
+        <source>Sign a message to prove you own a SPbCoin address</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -105,7 +110,7 @@
     </message>
     <message>
         <location filename="../forms/addressbookpage.ui" line="113"/>
-        <source>Verify a message to ensure it was signed with a specified Gostcoin address</source>
+        <source>Verify a message to ensure it was signed with a specified SPbCoin address</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -135,12 +140,12 @@
     </message>
     <message>
         <location filename="../addressbookpage.cpp" line="58"/>
-        <source>These are your Gostcoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <source>These are your SPbCoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../addressbookpage.cpp" line="63"/>
-        <source>These are your Gostcoin addresses for receiving payments. You may want to give a different one to each sender so you can keep track of who is paying you.</source>
+        <source>These are your SPbCoin addresses for receiving payments. You may want to give a different one to each sender so you can keep track of who is paying you.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -266,7 +271,7 @@
     </message>
     <message>
         <location filename="../askpassphrasedialog.cpp" line="101"/>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR GOSTCOINS&lt;/b&gt;!</source>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR SPbCOINS&lt;/b&gt;!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -282,7 +287,7 @@
     </message>
     <message>
         <location filename="../askpassphrasedialog.cpp" line="112"/>
-        <source>Gostcoin will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your gostcoins from being stolen by malware infecting your computer.</source>
+        <source>SPbCoin will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your spbcoins from being stolen by malware infecting your computer.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -343,7 +348,7 @@
     <message>
         <location filename="../bitcoingui.cpp" line="79"/>
         <location filename="../bitcoingui.cpp" line="681"/>
-        <source>Gostcoin</source>
+        <source>SPbCoin</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -368,7 +373,7 @@
     </message>
     <message>
         <location filename="../bitcoingui.cpp" line="184"/>
-        <source>Send coins to a Gostcoin address</source>
+        <source>Send coins to a SPbCoin address</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -413,12 +418,12 @@
     </message>
     <message>
         <location filename="../bitcoingui.cpp" line="226"/>
-        <source>&amp;About Gostcoin</source>
+        <source>&amp;About SPbCoin</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../bitcoingui.cpp" line="227"/>
-        <source>Show information about Gostcoin</source>
+        <source>Show information about SPbCoin</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -438,7 +443,7 @@
     </message>
     <message>
         <location filename="../bitcoingui.cpp" line="233"/>
-        <source>Modify configuration options for Gostcoin</source>
+        <source>Modify configuration options for SPbCoin</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -488,7 +493,7 @@
     </message>
     <message>
         <location filename="../bitcoingui.cpp" line="246"/>
-        <source>Sign messages with your Gostcoin addresses to prove you own them</source>
+        <source>Sign messages with your SPbCoin addresses to prove you own them</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -498,7 +503,7 @@
     </message>
     <message>
         <location filename="../bitcoingui.cpp" line="248"/>
-        <source>Verify messages to ensure they were signed with specified Gostcoin addresses</source>
+        <source>Verify messages to ensure they were signed with specified SPbCoin addresses</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -569,12 +574,12 @@
     </message>
     <message>
         <location filename="../bitcoingui.cpp" line="426"/>
-        <source>Gostcoin client</source>
+        <source>SPbCoin client</source>
         <translation type="unfinished"></translation>
     </message>
     <message numerus="yes">
         <location filename="../bitcoingui.cpp" line="567"/>
-        <source>%n active connection(s) to Gostcoin network</source>
+        <source>%n active connection(s) to SPbCoin network</source>
         <translation type="unfinished">
             <numerusform></numerusform>
             <numerusform></numerusform>
@@ -582,7 +587,7 @@
     </message>
     <message numerus="yes">
         <location filename="../bitcoingui.cpp" line="582"/>
-        <source>%n active connection(s) to I2P-Gostcoin network</source>
+        <source>%n active connection(s) to I2P-SPbCoin network</source>
         <translation type="unfinished">
             <numerusform></numerusform>
             <numerusform></numerusform>
@@ -720,7 +725,7 @@ Address: %4
     <message>
         <location filename="../bitcoingui.cpp" line="812"/>
         <location filename="../bitcoingui.cpp" line="835"/>
-        <source>URI can not be parsed! This can be caused by an invalid Gostcoin address or malformed URI parameters.</source>
+        <source>URI can not be parsed! This can be caused by an invalid SPbCoin address or malformed URI parameters.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -734,42 +739,42 @@ Address: %4
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gostcoin.cpp" line="166"/>
-        <source>A fatal error occurred. Gostcoin can no longer continue safely and will quit.</source>
+        <location filename="../spbcoin.cpp" line="166"/>
+        <source>A fatal error occurred. SPbCoin can no longer continue safely and will quit.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gostcoin.cpp" line="309"/>
+        <location filename="../spbcoin.cpp" line="309"/>
         <source>Failed to load style!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gostcoin.cpp" line="310"/>
+        <location filename="../spbcoin.cpp" line="310"/>
         <source>Failed to load the stylesheet provided.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../setupdarknet.cpp" line="15"/>
         <source>Do you run I2P on your computer?
-If so, press yes to let Gostcoin configure it&apos;s connection to the I2P</source>
+If so, press yes to let SPbCoin configure it&apos;s connection to the I2P</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../setupdarknet.cpp" line="19"/>
-        <source>Gostcoin Wizard - Step #1</source>
+        <source>SPbCoin Wizard - Step #1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../setupdarknet.cpp" line="24"/>
         <source>Do you want to install I2P, and continue I2P setup?
-If you select yes Gostcoin will quit, so you can continue the wizard after installing I2P.
-If you select no, Gostcoin will write a default clearnet (regular internet) config file for you. (unsafe mode)
+If you select yes SPbCoin will quit, so you can continue the wizard after installing I2P.
+If you select no, SPbCoin will write a default clearnet (regular internet) config file for you. (unsafe mode)
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../setupdarknet.cpp" line="30"/>
-        <source>Gostcoin Wizard - Step #2</source>
+        <source>SPbCoin Wizard - Step #2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1127,7 +1132,7 @@ This means a fee of at least %2 is required.</source>
     </message>
     <message>
         <location filename="../editaddressdialog.cpp" line="103"/>
-        <source>The entered address &quot;%1&quot; is not a valid Gostcoin address.</source>
+        <source>The entered address &quot;%1&quot; is not a valid SPbCoin address.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1151,7 +1156,7 @@ This means a fee of at least %2 is required.</source>
     <message>
         <location filename="../guiutil.cpp" line="498"/>
         <location filename="../guiutil.cpp" line="510"/>
-        <source>Gostcoin-Qt</source>
+        <source>SPbCoin-Qt</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1214,12 +1219,12 @@ This means a fee of at least %2 is required.</source>
     </message>
     <message>
         <location filename="../forms/optionsdialog.ui" line="85"/>
-        <source>Automatically start Gostcoin after logging in to the system.</source>
+        <source>Automatically start SPbCoin after logging in to the system.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../forms/optionsdialog.ui" line="88"/>
-        <source>&amp;Start Gostcoin on system login</source>
+        <source>&amp;Start SPbCoin on system login</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1239,7 +1244,7 @@ This means a fee of at least %2 is required.</source>
     </message>
     <message>
         <location filename="../forms/optionsdialog.ui" line="145"/>
-        <source>Connect to the Gostcoin network through a SOCKS proxy (e.g. when connecting through Tor).</source>
+        <source>Connect to the SPbCoin network through a SOCKS proxy (e.g. when connecting through Tor).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1324,7 +1329,7 @@ This means a fee of at least %2 is required.</source>
     </message>
     <message>
         <location filename="../forms/optionsdialog.ui" line="329"/>
-        <source>The user interface language can be set here. This setting will take effect after restarting Gostcoin.</source>
+        <source>The user interface language can be set here. This setting will take effect after restarting SPbCoin.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1339,7 +1344,7 @@ This means a fee of at least %2 is required.</source>
     </message>
     <message>
         <location filename="../forms/optionsdialog.ui" line="365"/>
-        <source>Whether to show Gostcoin addresses in the transaction list or not.</source>
+        <source>Whether to show SPbCoin addresses in the transaction list or not.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1484,7 +1489,7 @@ This means a fee of at least %2 is required.</source>
         <location filename="../optionsdialog.cpp" line="271"/>
         <location filename="../optionsdialog.cpp" line="280"/>
         <location filename="../optionsdialog.cpp" line="289"/>
-        <source>This setting will take effect after restarting Gostcoin.</source>
+        <source>This setting will take effect after restarting SPbCoin.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1518,7 +1523,7 @@ This means a fee of at least %2 is required.</source>
     <message>
         <location filename="../forms/overviewpage.ui" line="64"/>
         <location filename="../forms/overviewpage.ui" line="230"/>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Gostcoin network after a connection is established, but this process has not completed yet.</source>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the SPbCoin network after a connection is established, but this process has not completed yet.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1567,7 +1572,7 @@ This means a fee of at least %2 is required.</source>
     <name>PaymentServer</name>
     <message>
         <location filename="../paymentserver.cpp" line="110"/>
-        <source>Cannot start gostcoin: click-to-pay handler</source>
+        <source>Cannot start SPbCoin: click-to-pay handler</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1633,7 +1638,7 @@ This means a fee of at least %2 is required.</source>
     <name>RPCConsole</name>
     <message>
         <location filename="../forms/rpcconsole.ui" line="14"/>
-        <source>Gostcoin - Debug window</source>
+        <source>SPbCoin - Debug window</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1643,7 +1648,7 @@ This means a fee of at least %2 is required.</source>
     </message>
     <message>
         <location filename="../forms/rpcconsole.ui" line="39"/>
-        <source>Gostcoin Core</source>
+        <source>SPbCoin Core</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1727,7 +1732,7 @@ This means a fee of at least %2 is required.</source>
     </message>
     <message>
         <location filename="../forms/rpcconsole.ui" line="322"/>
-        <source>Open the Gostcoin debug log file from the current data directory. This can take a few seconds for large log files.</source>
+        <source>Open the SPbCoin debug log file from the current data directory. This can take a few seconds for large log files.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1742,7 +1747,7 @@ This means a fee of at least %2 is required.</source>
     </message>
     <message>
         <location filename="../forms/rpcconsole.ui" line="348"/>
-        <source>Show the Gostcoin-Qt help message to get a list with possible Gostcoin command-line options.</source>
+        <source>Show the SPbCoin-Qt help message to get a list with possible SPbCoin command-line options.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1762,7 +1767,7 @@ This means a fee of at least %2 is required.</source>
     </message>
     <message>
         <location filename="../rpcconsole.cpp" line="311"/>
-        <source>Welcome to the Gostcoin RPC console.</source>
+        <source>Welcome to the SPbCoin RPC console.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1907,7 +1912,7 @@ This means a fee of at least %2 is required.</source>
     </message>
     <message>
         <location filename="../sendcoinsdialog.cpp" line="35"/>
-        <source>Enter a Gostcoin address (e.g. GbD2JSQHBHCKLa9WTHmigJRpyFgmBj4woG)</source>
+        <source>Enter a SPbCoin address (e.g. GbD2JSQHBHCKLa9WTHmigJRpyFgmBj4woG)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2008,7 +2013,7 @@ This means a fee of at least %2 is required.</source>
     </message>
     <message>
         <location filename="../sendcoinsdialog.cpp" line="482"/>
-        <source>Warning: Invalid Gostcoin address</source>
+        <source>Warning: Invalid SPbCoin address</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2072,7 +2077,7 @@ This means a fee of at least %2 is required.</source>
     </message>
     <message>
         <location filename="../sendcoinsentry.cpp" line="27"/>
-        <source>Enter a Gostcoin address (e.g. GbD2JSQHBHCKLa9WTHmigJRpyFgmBj4woG)</source>
+        <source>Enter a SPbCoin address (e.g. GbD2JSQHBHCKLa9WTHmigJRpyFgmBj4woG)</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -2172,7 +2177,7 @@ to the clipboard</source>
     </message>
     <message>
         <location filename="../forms/signverifymessagedialog.ui" line="158"/>
-        <source>Sign the message to prove you own this Gostcoin address</source>
+        <source>Sign the message to prove you own this SPbCoin address</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2208,7 +2213,7 @@ to the clipboard</source>
     </message>
     <message>
         <location filename="../forms/signverifymessagedialog.ui" line="304"/>
-        <source>Verify the message to ensure it was signed with the specified Gostcoin address</source>
+        <source>Verify the message to ensure it was signed with the specified SPbCoin address</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2224,7 +2229,7 @@ to the clipboard</source>
     <message>
         <location filename="../signverifymessagedialog.cpp" line="27"/>
         <location filename="../signverifymessagedialog.cpp" line="30"/>
-        <source>Enter a Gostcoin address (e.g. GbD2JSQHBHCKLa9WTHmigJRpyFgmBj4woG)</source>
+        <source>Enter a SPbCoin address (e.g. GbD2JSQHBHCKLa9WTHmigJRpyFgmBj4woG)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2234,7 +2239,7 @@ to the clipboard</source>
     </message>
     <message>
         <location filename="../signverifymessagedialog.cpp" line="31"/>
-        <source>Enter Gostcoin signature</source>
+        <source>Enter SPbCoin signature</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2334,6 +2339,11 @@ to the clipboard</source>
     <message>
         <location filename="../splashscreen.cpp" line="31"/>
         <source>The Gostcoin developers</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <location filename="../splashscreen.cpp" line="31"/>
+        <source>The SPbCoin developers</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -2898,13 +2908,13 @@ to the clipboard</source>
         <source>%s, you must set a rpcpassword in the configuration file:
 %s
 It is recommended you use the following random password:
-rpcuser=gostcoinrpc
+rpcuser=spbcoinrpc
 rpcpassword=%s
 (you do not need to remember this password)
 The username and password MUST NOT be the same.
 If the file does not exist, create it with owner-readable-only file permissions.
 It is also recommended to set alertnotify so you are notified of problems;
-for example: alertnotify=echo %%s | mail -s &quot;Gostcoin Alert&quot; admin@foo.com
+for example: alertnotify=echo %%s | mail -s &quot;SPbCoin Alert&quot; admin@foo.com
 </source>
         <translation type="unfinished"></translation>
     </message>
@@ -2930,7 +2940,7 @@ for example: alertnotify=echo %%s | mail -s &quot;Gostcoin Alert&quot; admin@foo
     </message>
     <message>
         <location filename="../bitcoinstrings.cpp" line="32"/>
-        <source>Cannot obtain a lock on data directory %s. Gostcoin is probably already running.</source>
+        <source>Cannot obtain a lock on data directory %s. SPbCoin is probably already running.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2985,7 +2995,7 @@ for example: alertnotify=echo %%s | mail -s &quot;Gostcoin Alert&quot; admin@foo
     </message>
     <message>
         <location filename="../bitcoinstrings.cpp" line="65"/>
-        <source>Unable to bind to %s on this computer. Gostcoin is probably already running.</source>
+        <source>Unable to bind to %s on this computer. SPbCoin is probably already running.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3000,7 +3010,7 @@ for example: alertnotify=echo %%s | mail -s &quot;Gostcoin Alert&quot; admin@foo
     </message>
     <message>
         <location filename="../bitcoinstrings.cpp" line="73"/>
-        <source>Warning: Please check that your computer&apos;s date and time are correct! If your clock is wrong Gostcoin will not work properly.</source>
+        <source>Warning: Please check that your computer&apos;s date and time are correct! If your clock is wrong SPbCoin will not work properly.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3157,7 +3167,7 @@ If the file does not exist, create it with owner-readable-only file permissions.
     </message>
     <message>
         <location filename="../bitcoinstrings.cpp" line="115"/>
-        <source>Error loading wallet.dat: Wallet requires newer version of Gostcoin</source>
+        <source>Error loading wallet.dat: Wallet requires newer version of SPbCoin</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3267,7 +3277,7 @@ If the file does not exist, create it with owner-readable-only file permissions.
     </message>
     <message>
         <location filename="../bitcoinstrings.cpp" line="137"/>
-        <source>Gostcoin version</source>
+        <source>SPbCoin version</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3372,7 +3382,7 @@ If the file does not exist, create it with owner-readable-only file permissions.
     </message>
     <message>
         <location filename="../bitcoinstrings.cpp" line="158"/>
-        <source>Name of an I2P session (default: Gostcoin-client)</source>
+        <source>Name of an I2P session (default: SPbCoin-client)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3457,7 +3467,7 @@ If the file does not exist, create it with owner-readable-only file permissions.
     </message>
     <message>
         <location filename="../bitcoinstrings.cpp" line="175"/>
-        <source>Send command to -server or gostcoind</source>
+        <source>Send command to -server or spbcoind</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3497,7 +3507,7 @@ If the file does not exist, create it with owner-readable-only file permissions.
     </message>
     <message>
         <location filename="../bitcoinstrings.cpp" line="183"/>
-        <source>Set I2P session name to &lt;name&gt; (default: Gostcoin-client)</source>
+        <source>Set I2P session name to &lt;name&gt; (default: SPbCoin-client)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3537,7 +3547,7 @@ If the file does not exist, create it with owner-readable-only file permissions.
     </message>
     <message>
         <location filename="../bitcoinstrings.cpp" line="191"/>
-        <source>Specify configuration file (default: gostcoin.conf)</source>
+        <source>Specify configuration file (default: spbcoin.conf)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3552,7 +3562,7 @@ If the file does not exist, create it with owner-readable-only file permissions.
     </message>
     <message>
         <location filename="../bitcoinstrings.cpp" line="194"/>
-        <source>Specify pid file (default: gostcoind.pid)</source>
+        <source>Specify pid file (default: spbcoind.pid)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3562,7 +3572,7 @@ If the file does not exist, create it with owner-readable-only file permissions.
     </message>
     <message>
         <location filename="../bitcoinstrings.cpp" line="196"/>
-        <source>SSL options: (see the Gostcoin Wiki for SSL setup instructions)</source>
+        <source>SSL options: (see the SPbCoin Wiki for SSL setup instructions)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3662,7 +3672,7 @@ If the file does not exist, create it with owner-readable-only file permissions.
     </message>
     <message>
         <location filename="../bitcoinstrings.cpp" line="216"/>
-        <source>Wallet needed to be rewritten: restart Gostcoin to complete</source>
+        <source>Wallet needed to be rewritten: restart SPbCoin to complete</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

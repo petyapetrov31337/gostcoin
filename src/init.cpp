@@ -1,6 +1,7 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2012 The Bitcoin developers
 // Copyright (c) 2017-2018 The Gostcoin Developers
+// Copyright (c) 2018- The SPbCoin developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 // I2P-patch
@@ -206,12 +207,12 @@ bool AppInit(int argc, char* argv[])
         if (mapArgs.count("-?") || mapArgs.count("--help"))
         {
             // First part of help message is specific to bitcoind / RPC client
-            std::string strUsage = _("GOSTcoin version") + " " + FormatFullVersion() + "\n\n" +
+            std::string strUsage = _("SPbCoin version") + " " + FormatFullVersion() + "\n\n" +
                 _("Usage:") + "\n" +
-                  "  gostcoind [options]                     " + "\n" +
-                  "  gostcoind [options] <command> [params]  " + _("Send command to -server or gostcoind") + "\n" +
-                  "  gostcoind [options] help                " + _("List commands") + "\n" +
-                  "  gostcoind [options] help <command>      " + _("Get help for a command") + "\n";
+                  "  spbcoind [options]                     " + "\n" +
+                  "  spbcoind [options] <command> [params]  " + _("Send command to -server or spbcoind") + "\n" +
+                  "  spbcoind [options] help                " + _("List commands") + "\n" +
+                  "  spbcoind [options] help <command>      " + _("Get help for a command") + "\n";
 
             strUsage += "\n" + HelpMessage();
 
@@ -221,7 +222,7 @@ bool AppInit(int argc, char* argv[])
 
         // Command-line RPC
         for (int i = 1; i < argc; i++)
-            if (!IsSwitchChar(argv[i][0]) && !boost::algorithm::istarts_with(argv[i], "gostcoin:"))
+            if (!IsSwitchChar(argv[i][0]) && !boost::algorithm::istarts_with(argv[i], "spbcoin:"))
                 fCommandLine = true;
 
         if (fCommandLine)
@@ -330,8 +331,8 @@ std::string HelpMessage()
 {
     string strUsage = _("Options:") + "\n" +
         "  -?                     " + _("This help message") + "\n" +
-        "  -conf=<file>           " + _("Specify configuration file (default: gostcoin.conf)") + "\n" +
-        "  -pid=<file>            " + _("Specify pid file (default: gostcoind.pid)") + "\n" +
+        "  -conf=<file>           " + _("Specify configuration file (default: spbcoin.conf)") + "\n" +
+        "  -pid=<file>            " + _("Specify pid file (default: spbcoind.pid)") + "\n" +
         "  -gen                   " + _("Generate coins (default: 0)") + "\n" +
         "  -datadir=<dir>         " + _("Specify data directory") + "\n" +
         "  -dbcache=<n>           " + _("Set database cache size in megabytes (default: 25)") + "\n" +
@@ -400,7 +401,7 @@ std::string HelpMessage()
         "  -blockmaxsize=<n>      "   + _("Set maximum block size in bytes (default: 250000)") + "\n" +
         "  -blockprioritysize=<n> "   + _("Set maximum size of high-priority/low-fee transactions in bytes (default: 27000)") + "\n" +
 
-        "\n" + _("SSL options: (see the Gostcoin Wiki for SSL setup instructions)") + "\n" +
+        "\n" + _("SSL options: (see the SPbCoin Wiki for SSL setup instructions)") + "\n" +
         "  -rpcssl                                  " + _("Use OpenSSL (https) for JSON-RPC connections") + "\n" +
         "  -rpcsslcertificatechainfile=<file.cert>  " + _("Server certificate file (default: server.cert)") + "\n" +
         "  -rpcsslprivatekeyfile=<file.pem>         " + _("Server private key (default: server.pem)") + "\n" +
@@ -410,7 +411,7 @@ std::string HelpMessage()
         "  -generatei2pdestination " + _("Generate an I2P destination, print it and exit")+ "\n" +
         "  -i2p                    " + _("Enable I2P (default: 1)") + "\n" +
         "  -onlynet=i2p            " + _("Enable I2P-only mode") + "\n" +
-        "  -i2psessionname=<name>  " + _("Set I2P session name to <name> (default: Gostcoin-client)") + "\n" +
+        "  -i2psessionname=<name>  " + _("Set I2P session name to <name> (default: SPbCoin-client)") + "\n" +
         "  -samhost=<ip>           " + _("Set host where SAM bridge is listening (default: 127.0.0.1)") + "\n" +
         "  -samport=<port>         " + _("Set port number where SAM bridge is listening (default: 7656)") + "\n" +
         "  -mydestination=<keys>   " + _("Your full destination (public+private keys) (if it is not specified, the client will geneterate a random destination for you)") +
@@ -434,7 +435,7 @@ struct CImportingNow
 
 void ThreadImport(std::vector<boost::filesystem::path> vImportFiles)
 {
-    RenameThread("gostcoin-loadblk");
+    RenameThread("spbcoin-loadblk");
 
     // -reindex
     if (fReindex) {
@@ -717,12 +718,12 @@ bool AppInit2(boost::thread_group& threadGroup)
     if (file) fclose(file);
     static boost::interprocess::file_lock lock(pathLockFile.string().c_str());
     if (!lock.try_lock())
-        return InitError(strprintf(_("Cannot obtain a lock on data directory %s. Gostcoin is probably already running."), strDataDir.c_str()));
+        return InitError(strprintf(_("Cannot obtain a lock on data directory %s. SPbCoin is probably already running."), strDataDir.c_str()));
 
     if (GetBoolArg("-shrinkdebugfile", !fDebug))
         ShrinkDebugFile();
     printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
-    printf("Gostcoin version %s (%s)\n", FormatFullVersion().c_str(), CLIENT_DATE.c_str());
+    printf("SPbCoin version %s (%s)\n", FormatFullVersion().c_str(), CLIENT_DATE.c_str());
     printf("I2P module version %s\n", FormatI2PNativeFullVersion().c_str());
     printf("Using OpenSSL version %s\n", SSLeay_version(SSLEAY_VERSION));
     if (!fLogTimestamps)
@@ -733,10 +734,10 @@ bool AppInit2(boost::thread_group& threadGroup)
     std::ostringstream strErrors;
 
     if (fDaemon)
-        fprintf(stdout, "Gostcoin server starting\n");
+        fprintf(stdout, "SPbCoin server starting\n");
 
     if (!GetBoolArg("-stfu", false) && !IsI2POnly()) {
-	InitWarning("Gostcoin is running on clearnet!\n");
+	InitWarning("SPbCoin is running on clearnet!\n");
     }
 
     if (nScriptCheckThreads) {
@@ -1081,10 +1082,10 @@ bool AppInit2(boost::thread_group& threadGroup)
                 InitWarning(msg);
             }
             else if (nLoadWalletRet == DB_TOO_NEW)
-                strErrors << _("Error loading wallet.dat: Wallet requires newer version of Gostcoin") << "\n";
+                strErrors << _("Error loading wallet.dat: Wallet requires newer version of SPbCoin") << "\n";
             else if (nLoadWalletRet == DB_NEED_REWRITE)
             {
-                strErrors << _("Wallet needed to be rewritten: restart Gostcoin to complete") << "\n";
+                strErrors << _("Wallet needed to be rewritten: restart SPbCoin to complete") << "\n";
                 printf("%s", strErrors.str().c_str());
                 return InitError(strErrors.str());
             }

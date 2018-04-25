@@ -137,10 +137,10 @@ OBJS = \
     obj/leveldb.o \
     obj/txdb.o
 
-all: gostcoind
+all: spbcoind
 
-test check: test_gostcoin FORCE
-	./test_gostcoin
+test check: test_spbcoin FORCE
+	./test_spbcoin
 
 #
 # LevelDB support
@@ -187,11 +187,11 @@ obj-test/%.o: test/%.cpp
 	      -e '/^$$/ d' -e 's/$$/ :/' < $(@:%.o=%.d) >> $(@:%.o=%.P); \
 	  rm -f $(@:%.o=%.d)
 
-test_gostcoin: $(TESTOBJS) $(filter-out obj/init.o,$(OBJS:obj/%=obj/%))
+test_spbcoin: $(TESTOBJS) $(filter-out obj/init.o,$(OBJS:obj/%=obj/%))
 	$(LINK) $(xCXXFLAGS) -o $@ $(LIBPATHS) $^ $(TESTLIBS) $(xLDFLAGS) $(LIBS)
 
 clean:
-	$(RM) -f gostcoind test_gostcoin
+	$(RM) -f spbcoind test_spbcoin
 	$(RM) -f obj/*.o
 	$(RM) -f obj-test/*.o
 	$(RM) -f obj/*.P

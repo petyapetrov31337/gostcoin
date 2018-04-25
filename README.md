@@ -34,11 +34,11 @@ Building SPbCoin
 
 **Clone repository:**
 
-    git clone https://github.com/petyapetrov31337/spbcoin.git ~/gostcoin
+    git clone https://github.com/petyapetrov31337/spbcoin.git ~/spbcoin
 
-**Build gostcoind:**
+**Build spbcoind:**
 
-    cd ~/gostcoin/src
+    cd ~/spbcoin/src
     make -f makefile.unix
 
 **Optional: Build QT GUI**
@@ -46,12 +46,12 @@ Building SPbCoin
     # install requirements 
     apt-get install libqt5gui5 libqt5core5a libqt5dbus5 qttools5-dev qttools5-dev-tools libprotobuf-dev protobuf-compiler 
     # build GUI
-    cd ~/gostcoin
+    cd ~/spbcoin
     qmake && make
     
     # build GUI with QR codes and paper wallet
     apt-get install libqrencode-dev
-    cd ~/gostcoin
+    cd ~/spbcoin
     qmake "USE_QRCODE=1" && make
 
 Mining tools

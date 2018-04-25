@@ -268,7 +268,7 @@ void OptionsDialog::showRestartWarning_Proxy()
 {
     if(!fRestartWarningDisplayed_Proxy)
     {
-        QMessageBox::warning(this, tr("Warning"), tr("This setting will take effect after restarting Gostcoin."), QMessageBox::Ok);
+        QMessageBox::warning(this, tr("Warning"), tr("This setting will take effect after restarting SPbCoin."), QMessageBox::Ok);
         fRestartWarningDisplayed_Proxy = true;
     }
 }
@@ -277,7 +277,7 @@ void OptionsDialog::showRestartWarning_I2P()
 {
     if(!fRestartWarningDisplayed_I2P)
     {
-        QMessageBox::warning(this, tr("Warning"), tr("This setting will take effect after restarting Gostcoin."), QMessageBox::Ok);
+        QMessageBox::warning(this, tr("Warning"), tr("This setting will take effect after restarting SPbCoin."), QMessageBox::Ok);
         fRestartWarningDisplayed_I2P = true;
     }
 }
@@ -286,7 +286,7 @@ void OptionsDialog::showRestartWarning_Lang()
 {
     if(!fRestartWarningDisplayed_Lang)
     {
-        QMessageBox::warning(this, tr("Warning"), tr("This setting will take effect after restarting Gostcoin."), QMessageBox::Ok);
+        QMessageBox::warning(this, tr("Warning"), tr("This setting will take effect after restarting SPbCoin."), QMessageBox::Ok);
         fRestartWarningDisplayed_Lang = true;
     }
 }

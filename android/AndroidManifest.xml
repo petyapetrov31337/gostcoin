@@ -1,17 +1,17 @@
 <?xml version="1.0"?>
-<manifest package="org.purplei2p.gostcoin" xmlns:android="http://schemas.android.com/apk/res/android" android:versionName="0.8.5.11" android:versionCode="1" android:installLocation="auto">
+<manifest package="org.purplei2p.spbcoin" xmlns:android="http://schemas.android.com/apk/res/android" android:versionName="0.8.5.11" android:versionCode="1" android:installLocation="auto">
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.STORAGE"/>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <application android:hardwareAccelerated="true" android:name="org.qtproject.qt5.android.bindings.QtApplication" android:label="GostCoin">
+    <application android:hardwareAccelerated="true" android:name="org.qtproject.qt5.android.bindings.QtApplication" android:label="SPbCoin">
         <!-- <activity android:configChanges="orientation|uiMode|screenLayout|screenSize|smallestScreenSize|layoutDirection|locale|fontScale|keyboard|keyboardHidden|navigation"
         -->
-        <activity android:name="org.qtproject.qt5.android.bindings.QtActivity" android:label="GostCoin" android:screenOrientation="unspecified" android:launchMode="singleTop">
+        <activity android:name="org.qtproject.qt5.android.bindings.QtActivity" android:label="SPbCoin" android:screenOrientation="unspecified" android:launchMode="singleTop">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
-            <meta-data android:name="android.app.lib_name" android:value="gostcoin-qt"/>
+            <meta-data android:name="android.app.lib_name" android:value="spbcoin-qt"/>
             <meta-data android:name="android.app.qt_sources_resource_id" android:resource="@array/qt_sources"/>
             <meta-data android:name="android.app.repository" android:value="default"/>
             <meta-data android:name="android.app.qt_libs_resource_id" android:resource="@array/qt_libs"/>

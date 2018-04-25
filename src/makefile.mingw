@@ -102,10 +102,10 @@ OBJS= \
     obj/Gost.o \
     obj/resources.o
 
-all: gostcoind.exe
+all: spbcoind.exe
 
-test check: test_gostcoin.exe FORCE
-	test_gostcoin.exe
+test check: test_spbcoin.exe FORCE
+	test_spbcoin.exe
 
 #
 # LevelDB support
@@ -131,7 +131,7 @@ obj/%.o: i2psam/%.cpp
 obj/%.o : %.rc
 	$(WINDRES) -i $< -o $@
 
-gostcoind.exe: $(OBJS:obj/%=obj/%)
+spbcoind.exe: $(OBJS:obj/%=obj/%)
 	$(CXX) $(CFLAGS) $(LDFLAGS) -o $@ $(LIBPATHS) $^ $(LIBS)
 
 TESTOBJS := $(patsubst test/%.cpp,obj-test/%.o,$(wildcard test/*.cpp))
@@ -139,11 +139,11 @@ TESTOBJS := $(patsubst test/%.cpp,obj-test/%.o,$(wildcard test/*.cpp))
 obj-test/%.o: test/%.cpp
 	$(CXX) -c $(TESTDEFS) $(CFLAGS) -o $@ $<
 
-test_gostcoin.exe: $(TESTOBJS) $(filter-out obj/init.o,$(OBJS:obj/%=obj/%))
+test_spbcoin.exe: $(TESTOBJS) $(filter-out obj/init.o,$(OBJS:obj/%=obj/%))
 	$(CXX) $(CFLAGS) $(LDFLAGS) -o $@ $(LIBPATHS) $^ -lboost_unit_test_framework$(BOOST_SUFFIX) $(LIBS)
 
 clean:
-	$(RM) -f gostcoind.exe test_gostcoin.exe
+	$(RM) -f spbcoind.exe test_spbcoin.exe
 	$(RM) -f obj/*
 	$(RM) -f obj-test/*
 	cd leveldb && $(MAKE) TARGET_OS=NATIVE_WINDOWS clean && cd ..

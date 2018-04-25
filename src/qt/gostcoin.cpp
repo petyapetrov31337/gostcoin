@@ -3,6 +3,7 @@
  */
 // Copyright (c) 2013 The Anoncoin Developers
 // Copyright (c) 2017-2018 The Gostcoin Developers
+// Copyright (c) 2018- The SPbCoin developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 //
@@ -163,7 +164,7 @@ static std::string Translate(const char* psz)
 static void handleRunawayException(std::exception *e)
 {
     PrintExceptionContinue(e, "Runaway exception");
-    QMessageBox::critical(0, "Runaway exception", BitcoinGUI::tr("A fatal error occurred. Gostcoin can no longer continue safely and will quit.") + QString("\n\n") + QString::fromStdString(strMiscWarning));
+    QMessageBox::critical(0, "Runaway exception", BitcoinGUI::tr("A fatal error occurred. SPbCoin can no longer continue safely and will quit.") + QString("\n\n") + QString::fromStdString(strMiscWarning));
     exit(1);
 }
 
@@ -179,7 +180,7 @@ int main(int argc, char *argv[])
     QTextCodec::setCodecForCStrings(QTextCodec::codecForTr());
 #endif
 
-    Q_INIT_RESOURCE(gostcoin);
+    Q_INIT_RESOURCE(spbcoin);
     QApplication app(argc, argv);
 
 #ifdef ANDROID
@@ -204,11 +205,11 @@ int main(int argc, char *argv[])
     {
         // This message can not be translated, as translation is not initialized yet
         // (which not yet possible because lang=XX can be overridden in bitcoin.conf in the data directory)
-        QMessageBox::critical(0, "Gostcoin",
+        QMessageBox::critical(0, "SPbCoin",
                               QString("Error: Specified data directory \"%1\" does not exist.").arg(QString::fromStdString(mapArgs["-datadir"])));
         return 1;
     }
-    // Gostcoin
+    // SPbCoin
     if (!boost::filesystem::exists(GetConfigFile().string()))
     {
        	// Run wizard
@@ -219,12 +220,12 @@ int main(int argc, char *argv[])
 
     // Application identification (must be set before OptionsModel is initialized,
     // as it is used to locate QSettings)
-    QApplication::setOrganizationName("GOSTSec");
-    QApplication::setOrganizationDomain("gostcoin.net");
+    QApplication::setOrganizationName("SPbOrg");
+    QApplication::setOrganizationDomain("spbcoin.net");
     if(GetBoolArg("-testnet")) // Separate UI settings for testnet
-        QApplication::setApplicationName("GOSTcoin-Qt-testnet");
+        QApplication::setApplicationName("SPbCoin-Qt-testnet");
     else
-        QApplication::setApplicationName("GOSTcoin-Qt");
+        QApplication::setApplicationName("SPbCoin-Qt");
 
     // ... then GUI settings:
     OptionsModel optionsModel;
@@ -248,11 +249,11 @@ int main(int argc, char *argv[])
     if (qtTranslator.load("qt_" + lang_territory, QLibraryInfo::location(QLibraryInfo::TranslationsPath)))
         app.installTranslator(&qtTranslator);
 
-    // Load e.g. bitcoin_de.qm (shortcut "de" needs to be defined in gostcoin.qrc)
+    // Load e.g. bitcoin_de.qm (shortcut "de" needs to be defined in spbcoin.qrc)
     if (translatorBase.load(lang, ":/translations/"))
         app.installTranslator(&translatorBase);
 
-    // Load e.g. bitcoin_de_DE.qm (shortcut "de_DE" needs to be defined in gostcoin.qrc)
+    // Load e.g. bitcoin_de_DE.qm (shortcut "de_DE" needs to be defined in spbcoin.qrc)
     if (translator.load(lang_territory, ":/translations/"))
         app.installTranslator(&translator);
 
@@ -275,7 +276,7 @@ int main(int argc, char *argv[])
 #ifdef Q_OS_MAC
     // on mac, also change the icon now because it would look strange to have a testnet splash (green) and a std app icon (orange)
     if(GetBoolArg("-testnet")) {
-        MacDockIconHandler::instance()->setIcon(QIcon(":icons/gostcoin_testnet"));
+        MacDockIconHandler::instance()->setIcon(QIcon(":icons/spbcoin_testnet"));
     }
 #endif
 

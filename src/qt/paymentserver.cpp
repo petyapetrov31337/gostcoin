@@ -1,5 +1,6 @@
 // Copyright (c) 2009-2012 The Bitcoin developers
 // Copyright (c) 2017-2018 The Gostcoin Developers
+// Copyright (c) 2018- The SPbCoin developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -26,7 +27,7 @@
 using namespace boost;
 
 const int BITCOIN_IPC_CONNECT_TIMEOUT = 1000; // milliseconds
-const QString BITCOIN_IPC_PREFIX("gostcoin:");
+const QString BITCOIN_IPC_PREFIX("spbcoin:");
 
 //
 // Create a name that is unique for:
@@ -35,7 +36,7 @@ const QString BITCOIN_IPC_PREFIX("gostcoin:");
 //
 static QString ipcServerName()
 {
-    QString name("GostcoinQt");
+    QString name("SPbCoinQt");
 
     // Append a simple hash of the datadir
     // Note that GetDataDir(true) returns a different path
@@ -96,7 +97,7 @@ bool PaymentServer::ipcSendCommandLine()
 
 PaymentServer::PaymentServer(QApplication* parent) : QObject(parent), saveURIs(true)
 {
-    // Install global event filter to catch QFileOpenEvents on the mac (sent when you click gostcoin: links)
+    // Install global event filter to catch QFileOpenEvents on the mac (sent when you click spbcoin: links)
     parent->installEventFilter(this);
 
     QString name = ipcServerName();
@@ -107,14 +108,14 @@ PaymentServer::PaymentServer(QApplication* parent) : QObject(parent), saveURIs(t
     uriServer = new QLocalServer(this);
 
     if (!uriServer->listen(name))
-        qDebug() << tr("Cannot start gostcoin: click-to-pay handler");
+        qDebug() << tr("Cannot start spbcoin: click-to-pay handler");
     else
         connect(uriServer, SIGNAL(newConnection()), this, SLOT(handleURIConnection()));
 }
 
 bool PaymentServer::eventFilter(QObject *object, QEvent *event)
 {
-    // clicking on gostcoin: URLs creates FileOpen events on the Mac:
+    // clicking on spbcoin: URLs creates FileOpen events on the Mac:
     if (event->type() == QEvent::FileOpen)
     {
         QFileOpenEvent* fileEvent = static_cast<QFileOpenEvent*>(event);

@@ -1,6 +1,7 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2012 The Bitcoin developers
 // Copyright (c) 2017-2018 The Gostcoin Developers
+// Copyright (c) 2018- The SPbCoin developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -66,7 +67,7 @@ map<uint256, set<uint256> > mapOrphanTransactionsByPrev;
 // Constant stuff for coinbase transactions we create:
 CScript COINBASE_FLAGS;
 
-const string strMessageMagic = "Gostcoin Signed Message:\n";
+const string strMessageMagic = "SPbCoin Signed Message:\n";
 
 double dHashesPerSec = 0.0;
 int64 nHPSTimerStart = 0;
@@ -1071,7 +1072,7 @@ uint256 static GetOrphanRoot(const CBlockHeader* pblock)
 int64 static GetBlockValue(int nHeight, int64 nFees)
 {
     int64 nSubsidy = 5 * COIN;
-    // Some adjustments to the start of the lifetime to Gostcoin
+    // Some adjustments to the start of the lifetime to SPbCoin
     if (nHeight < 42000) {
         nSubsidy = 4.2 * COIN;
     } else if (nHeight < 77777) { // All luck is seven ;)
@@ -1079,15 +1080,15 @@ int64 static GetBlockValue(int nHeight, int64 nFees)
     } else if (nHeight == 77778) {
         nSubsidy = 10 * COIN;
     } else {
-        nSubsidy >>= (nHeight / 306600); // Gostcoin: 306600 blocks in ~2 years
+        nSubsidy >>= (nHeight / 306600); // SPbCoin: 306600 blocks in ~2 years
     }
     return nSubsidy + nFees;
 }
 
 // Protocol 1 & 2
 
-static const int64 nTargetTimespan = 86184; //420 * 205.2; = 86184 // Gostcoin: 420 blocks
-static const int64 nTargetSpacing = 205;//3.42 * 60; // Gostcoin: 3.42 minutes
+static const int64 nTargetTimespan = 86184; //420 * 205.2; = 86184 // SPbCoin: 420 blocks
+static const int64 nTargetSpacing = 205;//3.42 * 60; // SPbCoin: 3.42 minutes
 static const int64 nInterval = nTargetTimespan / nTargetSpacing;
 
 static const int nDifficultySwitchHeight = 15420;
@@ -1099,7 +1100,7 @@ static const int nDifficultyProtocol3 = 33333;
 
 
 unsigned int static KimotoGravityWell(const CBlockIndex* pindexLast, const CBlockHeader *pblock, uint64 TargetBlocksSpacingSeconds, uint64 PastBlocksMin, uint64 PastBlocksMax) {
-    /* current difficulty formula, Gostcoin - kimoto gravity well */
+    /* current difficulty formula, SPbCoin - kimoto gravity well */
     const CBlockIndex *BlockLastSolved = pindexLast;
     const CBlockIndex *BlockReading = pindexLast;
     const CBlockHeader *BlockCreating = pblock;
@@ -1202,7 +1203,7 @@ unsigned int static OldGetNextWorkRequired(const CBlockIndex* pindexLast, const 
     if (pindexLast == NULL)
         return nProofOfWorkLimit;
 
-    // Gostcoin difficulty adjustment protocol switch (Thanks to FeatherCoin for this idea)
+    //SPbCoin difficulty adjustment protocol switch (Thanks to FeatherCoin for this idea)
 
     static const int newTargetTimespan = 2050;
     int nHeight = pindexLast->nHeight + 1;
@@ -1230,7 +1231,7 @@ unsigned int static OldGetNextWorkRequired(const CBlockIndex* pindexLast, const 
         return pindexLast->nBits;
     }
 
-    // Gostcoin: This fixes an issue where a 51% attack can change difficulty at will.
+    // SPbCoin: This fixes an issue where a 51% attack can change difficulty at will.
     // Go back the full period unless it's the first retarget after genesis. Code courtesy of Art Forz
     int blockstogoback = nInterval-1;
     if ((pindexLast->nHeight+1) != nInterval)
@@ -4652,7 +4653,7 @@ bool CheckWork(CBlock* pblock, CWallet& wallet, CReserveKey& reservekey)
         return false;
 
     //// debug print
-    printf("GostcoinMiner:\n");
+    printf("SPbCoinMiner:\n");
     printf("proof-of-work found  \n  hash: %s  \ntarget: %s\n", hash.GetHex().c_str(), hashTarget.GetHex().c_str());
     pblock->print();
     printf("generated %s\n", FormatMoney(pblock->vtx[0].vout[0].nValue).c_str());
@@ -4661,7 +4662,7 @@ bool CheckWork(CBlock* pblock, CWallet& wallet, CReserveKey& reservekey)
     {
         LOCK(cs_main);
         if (pblock->hashPrevBlock != hashBestChain)
-            return error("GostcoinMiner : generated block is stale");
+            return error("SPbCoinMiner : generated block is stale");
 
         // Remove key from key pool
         reservekey.KeepKey();
@@ -4675,17 +4676,17 @@ bool CheckWork(CBlock* pblock, CWallet& wallet, CReserveKey& reservekey)
         // Process this block the same as if we had received it from another node
         CValidationState state;
         if (!ProcessBlock(state, NULL, pblock))
-            return error("GostcoinMiner : ProcessBlock, block not accepted");
+            return error("SPbCoinMiner : ProcessBlock, block not accepted");
     }
 
     return true;
 }
 
-void static GostcoinMiner(CWallet *pwallet)
+void static SPbCoinMiner(CWallet *pwallet)
 {
-    printf("GostcoinMiner started\n");
+    printf("SPbCoinMiner started\n");
     SetThreadPriority(THREAD_PRIORITY_LOWEST);
-    RenameThread("gostcoin-miner");
+    RenameThread("spbcoin-miner");
 
     // Each thread has its own key and counter
     CReserveKey reservekey(pwallet);
@@ -4712,7 +4713,7 @@ void static GostcoinMiner(CWallet *pwallet)
 			RAND_bytes ((uint8_t *)&pblock->nNonce, 4);
 		    IncrementExtraNonce(pblock, pindexPrev, nExtraNonce);
 
-		    printf("Running GostcoinMiner with %" PRIszu " transactions in block (%u bytes)\n", pblock->vtx.size(),
+		    printf("Running SPbCoinMiner with %" PRIszu " transactions in block (%u bytes)\n", pblock->vtx.size(),
 		           ::GetSerializeSize(*pblock, SER_NETWORK, PROTOCOL_VERSION));
 
 		    //
@@ -4787,7 +4788,7 @@ void static GostcoinMiner(CWallet *pwallet)
 	}
     catch (boost::thread_interrupted)
     {
-        printf("GostcoinMiner terminated\n");
+        printf("SPbCoinMiner terminated\n");
         throw;
     }
 }
@@ -4812,7 +4813,7 @@ void GenerateBitcoins(bool fGenerate, CWallet* pwallet)
 
     minerThreads = new boost::thread_group();
     for (int i = 0; i < nThreads; i++)
-        minerThreads->create_thread(boost::bind(&GostcoinMiner, pwallet));
+        minerThreads->create_thread(boost::bind(&SPbCoinMiner, pwallet));
 }
 
 // Amount compression:

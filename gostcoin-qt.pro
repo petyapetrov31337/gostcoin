@@ -1,6 +1,6 @@
 TEMPLATE = app
-TARGET = gostcoin-qt
-macx:TARGET = "GOSTcoin-Qt"
+TARGET = spbcoin-qt
+macx:TARGET = "SPbCoin-Qt"
 VERSION = 0.8.5.11
 INCLUDEPATH += src src/json src/qt src/i2psam
 QT += core gui network
@@ -215,7 +215,7 @@ HEADERS += src/qt/bitcoingui.h \
     src/qt/showi2paddresses.h \
     src/qt/setupdarknet.h
 
-SOURCES += src/qt/gostcoin.cpp \
+SOURCES += src/qt/spbcoin.cpp \
     src/qt/bitcoingui.cpp \
     src/qt/transactiontablemodel.cpp \
     src/qt/addresstablemodel.cpp \
@@ -290,7 +290,7 @@ SOURCES += src/qt/gostcoin.cpp \
     src/qt/setupdarknet.cpp \
     src/i2psam/i2psam.cpp
 
-RESOURCES += src/qt/gostcoin.qrc
+RESOURCES += src/qt/spbcoin.qrc
 
 FORMS += src/qt/forms/sendcoinsdialog.ui \
     src/qt/forms/coincontroldialog.ui \
@@ -320,7 +320,7 @@ SOURCES += src/qt/test/test_main.cpp \
 HEADERS += src/qt/test/uritests.h
 DEPENDPATH += src/qt/test
 QT += testlib
-TARGET = gostcoin-qt_test
+TARGET = spbcoin-qt_test
 DEFINES += BITCOIN_QT_TEST
   macx: CONFIG -= app_bundle
 }
@@ -331,8 +331,8 @@ greaterThan(QT_MAJOR_VERSION, 4): {
 }
 
 # for lrelease/lupdate
-# also add new translations to src/qt/gostcoin.qrc under translations/
-TRANSLATIONS = $$files(src/qt/locale/gostcoin_*.ts)
+# also add new translations to src/qt/spbcoin.qrc under translations/
+TRANSLATIONS = $$files(src/qt/locale/spbcoin_*.ts)
 
 isEmpty(QMAKE_LRELEASE) {
     win32:QMAKE_LRELEASE = $$[QT_INSTALL_BINS]\\lrelease.exe
@@ -352,7 +352,7 @@ OTHER_FILES += README.md \
     doc/*.rst \
     doc/*.txt \
     doc/*.md \
-    src/qt/res/gostcoin-qt.rc \
+    src/qt/res/spbcoin-qt.rc \
     src/test/*.cpp \
     src/test/*.h \
     src/qt/test/*.cpp \
@@ -393,7 +393,7 @@ isEmpty(BOOST_INCLUDE_PATH) {
 }
 
 win32:DEFINES += WIN32
-win32:RC_FILE = src/qt/res/gostcoin-qt.rc
+win32:RC_FILE = src/qt/res/spbcoin-qt.rc
 
 win32:!contains(MINGW_THREAD_BUGFIX, 0) {
     # At least qmake's win32-g++-cross profile is missing the -lmingwthrd
@@ -417,7 +417,7 @@ macx:HEADERS += src/qt/macdockiconhandler.h src/qt/macnotificationhandler.h
 macx:OBJECTIVE_SOURCES += src/qt/macdockiconhandler.mm src/qt/macnotificationhandler.mm
 macx:LIBS += -framework Foundation -framework ApplicationServices -framework AppKit -framework CoreServices
 macx:DEFINES += MAC_OSX MSG_NOSIGNAL=0
-macx:ICON = src/qt/res/icons/gostcoin.icns
+macx:ICON = src/qt/res/icons/spbcoin.icns
 macx:QMAKE_CFLAGS_THREAD += -pthread
 macx:QMAKE_LFLAGS_THREAD += -pthread
 macx:QMAKE_CXXFLAGS_THREAD += -pthread

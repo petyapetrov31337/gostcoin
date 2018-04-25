@@ -1,5 +1,5 @@
 TEMPLATE = app
-TARGET = gostcoin-qt
+TARGET = spbcoin-qt
 VERSION = 0.8.5.11
 INCLUDEPATH += ../src ../src/json ../src/qt ../src/i2psam
 QT += core gui network androidextras
@@ -289,7 +289,7 @@ HEADERS += ../src/qt/bitcoingui.h \
     ../src/qt/showi2paddresses.h \
     ../src/qt/setupdarknet.h
 
-SOURCES += ../src/qt/gostcoin.cpp \
+SOURCES += ../src/qt/spbcoin.cpp \
     ../src/qt/bitcoingui.cpp \
     ../src/qt/transactiontablemodel.cpp \
     ../src/qt/addresstablemodel.cpp \
@@ -364,7 +364,7 @@ SOURCES += ../src/qt/gostcoin.cpp \
     ../src/i2psam/i2psam.cpp \
     ../src/qt/setupdarknet.cpp
 
-RESOURCES += ../src/qt/gostcoin.qrc
+RESOURCES += ../src/qt/spbcoin.qrc
 
 FORMS += ../src/qt/forms/sendcoinsdialog.ui \
     ../src/qt/forms/coincontroldialog.ui \
@@ -403,8 +403,8 @@ greaterThan(QT_MAJOR_VERSION, 4): {
 }
 
 # for lrelease/lupdate
-# also add new translations to ../src/qt/gostcoin.qrc under translations/
-TRANSLATIONS = $$files(../src/qt/locale/gostcoin_*.ts)
+# also add new translations to ../src/qt/spbcoin.qrc under translations/
+TRANSLATIONS = $$files(../src/qt/locale/spbcoin_*.ts)
 
 isEmpty(QMAKE_LRELEASE) {
     QMAKE_LRELEASE = $$[QT_INSTALL_BINS]/lrelease
@@ -470,9 +470,9 @@ android {
 }
 
 DISTFILES += \
-    ../../../S2_ATHOME/git_gostcoin/gostcoin/android/AndroidManifest.xml \
-    ../../../S2_ATHOME/git_gostcoin/gostcoin/android/res/values/libs.xml \
-    ../../../S2_ATHOME/git_gostcoin/gostcoin/android/build.gradle \
+    ../../../S2_ATHOME/git_spbcoin/spbcoin/android/AndroidManifest.xml \
+    ../../../S2_ATHOME/git_spbcoin/spbcoin/android/res/values/libs.xml \
+    ../../../S2_ATHOME/git_spbcoin/spbcoin/android/build.gradle \
     ../docs/gost_android_take3.txt
 
 

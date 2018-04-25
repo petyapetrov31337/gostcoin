@@ -64,7 +64,7 @@ libboost_system-gcc-mt-s-1_57.a
 libboost_thread_pthread-gcc-mt-s-1_57.a
 
 2.4 LevelDB
-cd git/gostcoin
+cd git/spbcoin
 cd src/leveldb
 TARGET_OS=OS_ANDROID_CROSSCOMPILE make libleveldb.a libmemenv.a
 

@@ -1,5 +1,6 @@
 // Copyright 2013 The Anoncoin Developers
 // Copyright 2017-2018 The Gostcoin Developers
+// Copyright (c) 2018- The SPbCoin developers
 
 #include <QApplication>
 #include <QMessageBox>
@@ -13,21 +14,21 @@
 void runFirstRunWizard()
 {
    QString strMessage = BitcoinGUI::tr("Do you run I2P on your computer?\n"
-                        "If so, press yes to let Gostcoin configure it's "
+                        "If so, press yes to let SPbCoin configure it's "
                         "connection to the I2P");
     QMessageBox::StandardButton isRunningDarknet = QMessageBox::question(NULL, 
-        BitcoinGUI::tr("Gostcoin Wizard - Step #1"), strMessage,
+        BitcoinGUI::tr("SPbCoin Wizard - Step #1"), strMessage,
         QMessageBox::Yes|QMessageBox::No, QMessageBox::Yes);
     if (isRunningDarknet == QMessageBox::No)
     {
         // Tell user to download
         strMessage = BitcoinGUI::tr("Do you want to install I2P, and "
-                     "continue I2P setup?\nIf you select yes Gostcoin will quit, "
+                     "continue I2P setup?\nIf you select yes SPbCoin will quit, "
                      "so you can continue the wizard after installing I2P.\n"
-                     "If you select no, Gostcoin will write a default clearnet "
+                     "If you select no, SPbCoin will write a default clearnet "
                      "(regular internet) config file for you. (unsafe mode)\n");
         QMessageBox::StandardButton wantDownloadDarknet = QMessageBox::question(NULL,
-            BitcoinGUI::tr("Gostcoin Wizard - Step #2"), strMessage,
+            BitcoinGUI::tr("SPbCoin Wizard - Step #2"), strMessage,
             QMessageBox::Yes|QMessageBox::No, QMessageBox::Yes);
         if (wantDownloadDarknet == QMessageBox::No)
         {

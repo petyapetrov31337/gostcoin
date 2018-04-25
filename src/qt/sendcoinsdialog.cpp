@@ -32,7 +32,7 @@ SendCoinsDialog::SendCoinsDialog(QWidget *parent) :
 #endif
 #if QT_VERSION >= 0x040700
     /* Do not move this to the XML file, Qt before 4.7 will choke on it */
-    ui->lineEditCoinControlChange->setPlaceholderText(tr("Enter a Gostcoin address (e.g. GbD2JSQHBHCKLa9WTHmigJRpyFgmBj4woG)"));
+    ui->lineEditCoinControlChange->setPlaceholderText(tr("Enter a SPbCoin address (e.g. GbD2JSQHBHCKLa9WTHmigJRpyFgmBj4woG)"));
 #endif
 
     addEntry();
@@ -479,7 +479,7 @@ void SendCoinsDialog::coinControlChangeEdited(const QString & text)
         else if (!CBitcoinAddress(text.toStdString()).IsValid())
         {
             ui->labelCoinControlChangeLabel->setStyleSheet("QLabel{color:red;}");
-            ui->labelCoinControlChangeLabel->setText(tr("Warning: Invalid Gostcoin address"));
+            ui->labelCoinControlChangeLabel->setText(tr("Warning: Invalid SPbCoin address"));
         }
         else
         {

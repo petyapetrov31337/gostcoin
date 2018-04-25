@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Gostcoin - Debug window</string>
+   <string>SPbCoin - Debug window</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout_2">
    <item>
@@ -36,7 +36,7 @@
           </font>
          </property>
          <property name="text">
-          <string>Gostcoin Core</string>
+          <string>SPbCoin Core</string>
          </property>
         </widget>
        </item>
@@ -319,7 +319,7 @@
        <item row="15" column="0">
         <widget class="QPushButton" name="openDebugLogfileButton">
          <property name="toolTip">
-          <string>Open the Gostcoin debug log file from the current data directory. This can take a few seconds for large log files.</string>
+          <string>Open the SPbCoin debug log file from the current data directory. This can take a few seconds for large log files.</string>
          </property>
          <property name="text">
           <string>&amp;Open</string>
@@ -345,7 +345,7 @@
        <item row="17" column="0">
         <widget class="QPushButton" name="showCLOptionsButton">
          <property name="toolTip">
-          <string>Show the Gostcoin-Qt help message to get a list with possible Gostcoin command-line options.</string>
+          <string>Show the SPbCoin-Qt help message to get a list with possible SPbCoin command-line options.</string>
          </property>
          <property name="text">
           <string>&amp;Show</string>
@@ -427,7 +427,7 @@
             <string/>
            </property>
            <property name="icon">
-            <iconset resource="../gostcoin.qrc">
+            <iconset resource="../spbcoin.qrc">
              <normaloff>:/icons/remove</normaloff>:/icons/remove</iconset>
            </property>
            <property name="shortcut">
@@ -447,7 +447,7 @@
   </layout>
  </widget>
  <resources>
-  <include location="../gostcoin.qrc"/>
+  <include location="../spbcoin.qrc"/>
  </resources>
  <connections/>
 </ui>
