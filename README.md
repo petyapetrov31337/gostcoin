@@ -1,19 +1,19 @@
-GOSTCoin Core
+SPbCoin Core
 =============
 
-GOSTCoin (GST) is a digital currency based on [blockchain](https://en.wikipedia.org/wiki/Blockchain) technology.
+SPbCoin (SPBC) is a digital currency based on [blockchain](https://en.wikipedia.org/wiki/Blockchain) technology.
 It allows instant payments worldwide with focus on privacy and security of its users.
 
-Why GOSTCoin?
+Why SPbCoin?
 -------------
 
-GOSTCoin uses Soviet and Russian government standard cryptography: 
+SPbCoin uses Soviet and Russian government standard cryptography: 
 [GOST R 34.10-2012](https://tools.ietf.org/html/rfc7091) for signature and [GOST R 34.11-2012](https://tools.ietf.org/html/rfc6986) for hash. 
-[More info about crypto](https://github.com/GOSTSec/gostcoin/wiki/Cryptography).
 
-GOSTCoin is using [Invisible Internet](https://github.com/PurpleI2P/i2pd) (I2P) as a secure network layer.
 
-GOSTCoin needs I2P router
+SPbCoin is using [Invisible Internet](https://github.com/PurpleI2P/i2pd) (I2P) as a secure network layer.
+
+SPbCoin needs I2P router
 -------------------------
 
 Install and run [i2pd](https://github.com/PurpleI2P/i2pd).
@@ -25,7 +25,7 @@ Enable SAM API in i2pd. Edit in `i2pd.conf`:
 
 and restart i2pd. Local TCP port 7656 should be available.
 
-Building GOSTCoin
+Building SPbCoin
 -----------------
 
 **Install development libraries:**
@@ -34,7 +34,7 @@ Building GOSTCoin
 
 **Clone repository:**
 
-    git clone https://github.com/GOSTSec/gostcoin.git ~/gostcoin
+    git clone https://github.com/petyapetrov31337/spbcoin.git ~/gostcoin
 
 **Build gostcoind:**
 
@@ -62,6 +62,6 @@ Dedicated mining tools are available: [cpuminer for CPU](https://github.com/GOST
 License
 -------
 
-GOSTCoin Core is released under the terms of the MIT license. See [COPYING](COPYING) for more
+SPbCoin Core is released under the terms of the MIT license. See [COPYING](COPYING) for more
 information or see http://opensource.org/licenses/MIT.
 

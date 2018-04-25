@@ -32,7 +32,7 @@ $ make -j <threads> && make install
 #### Cloning repository
 ```bash
 $ cd ..
-$ git clone https://github.com/GOSTSec/gostcoin.git
+$ git clone https://github.com/petyapetrov31337/spbcoin.git
 $ cd gostcoin
 ```
 
