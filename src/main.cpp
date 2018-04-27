@@ -2884,7 +2884,7 @@ bool InitBlockIndex() {
     if (!fReindex) {
 
         // Genesis block
-        const char* pszTimestamp = fTestNet ? "20/Jul/2017: PlazRulezVseProstoIJasno" : "02/Apr/2017:  GOST R 34.11-2012 - orignal";
+        const char* pszTimestamp = fTestNet ? "20/Jul/2017: PlazRulezVseProstoIJasno" : "02/Apr/2017:  GOST R 34.11-2012 - orignal" : "27/04/2018 - SPbCoin Start - Bitcoin 9274$";
         CTransaction txNew;
         txNew.vin.resize(1);
         txNew.vout.resize(1);
