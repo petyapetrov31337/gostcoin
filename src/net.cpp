@@ -1225,28 +1225,28 @@ void ThreadSocketHandler()
 // The first name is used as information source for addrman.
 // The second name should resolve to a list of seed addresses.
 static const char *strMainNetI2PDNSSeed[][2] = {
-	{"cxlrsrjc7kwcoqm6mnhsrjw6pkglt5hk5q5ctrullz5wyhfv2ylq.b32.i2p","cxlrsrjc7kwcoqm6mnhsrjw6pkglt5hk5q5ctrullz5wyhfv2ylq.b32.i2p"}, // xcps
-	{"6kpijk3ykvn7yqloxmkmudoow326dubsrzrxqbkwstrxb73z4auq.b32.i2p","6kpijk3ykvn7yqloxmkmudoow326dubsrzrxqbkwstrxb73z4auq.b32.i2p"}, // R4SAS
-	{"xq7jlz5t5n3phb62ro2zicg4zzhibzlflgci4xnhsdi3wr6ihixq.b32.i2p","xq7jlz5t5n3phb62ro2zicg4zzhibzlflgci4xnhsdi3wr6ihixq.b32.i2p"}, // pisekot
-	{"hwzq7fjamed457qurgl23ck5z3jhziqjtwrag24t34qs3jugzr7q.b32.i2p","hwzq7fjamed457qurgl23ck5z3jhziqjtwrag24t34qs3jugzr7q.b32.i2p"}, // pool.gostcoin.i2p
+	{"main","192.168.10.250"}, // xcps
+//	{"6kpijk3ykvn7yqloxmkmudoow326dubsrzrxqbkwstrxb73z4auq.b32.i2p","6kpijk3ykvn7yqloxmkmudoow326dubsrzrxqbkwstrxb73z4auq.b32.i2p"}, // R4SAS
+//	{"xq7jlz5t5n3phb62ro2zicg4zzhibzlflgci4xnhsdi3wr6ihixq.b32.i2p","xq7jlz5t5n3phb62ro2zicg4zzhibzlflgci4xnhsdi3wr6ihixq.b32.i2p"}, // pisekot
+//	{"hwzq7fjamed457qurgl23ck5z3jhziqjtwrag24t34qs3jugzr7q.b32.i2p","hwzq7fjamed457qurgl23ck5z3jhziqjtwrag24t34qs3jugzr7q.b32.i2p"}, // pool.gostcoin.i2p
 	{NULL, NULL}
 };
 
 static const char *strTestNetI2PDNSSeed[][2] = {
-	{"mok4u7ifgpdyv6dfo63l2xw63dy7gwjvxekvc3rs4cejyl64lomq.b32.i2p","mok4u7ifgpdyv6dfo63l2xw63dy7gwjvxekvc3rs4cejyl64lomq.b32.i2p"}, // pool.gostcoin.i2p
+	{"main","192.168.10.250"}, // pool.gostcoin.i2p
 	{NULL, NULL}
 };
 
 static const char *strMainNetDNSSeed[][2] = {
-	{"gostco.in", "dnsseed.gostco.in"},
-	{"failover", "dnsseed1.gostco.in"},
-	{"pisekot", "neko.pisekot.ru"},
-	{"pool.gostco.in","pool.gostco.in"},
+	{"main", "192.168.10.250"},
+//	{"failover", "dnsseed1.gostco.in"},
+//	{"pisekot", "neko.pisekot.ru"},
+//	{"pool.gostco.in","pool.gostco.in"},
 	{NULL, NULL}
 };
 
 static const char *strTestNetDNSSeed[][2] = {
-	{"gostco.in", "dnsseed.gostco.in"},
+	{"main", "192.168.10.250"},
 	{NULL, NULL}
 };
 

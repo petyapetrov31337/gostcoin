@@ -1071,14 +1071,14 @@ uint256 static GetOrphanRoot(const CBlockHeader* pblock)
 
 int64 static GetBlockValue(int nHeight, int64 nFees)
 {
-    int64 nSubsidy = 5 * COIN;
+    int64 nSubsidy = 2500 * COIN;
     // Some adjustments to the start of the lifetime to SPbCoin
-    if (nHeight < 42000) {
-        nSubsidy = 4.2 * COIN;
-    } else if (nHeight < 77777) { // All luck is seven ;)
-        nSubsidy = 7 * COIN;
-    } else if (nHeight == 77778) {
-        nSubsidy = 10 * COIN;
+    if (nHeight < 6307200) {
+        nSubsidy = 2500 * COIN;
+    } else if (nHeight < 12614400) { // All luck is seven ;)
+        nSubsidy = 1250 * COIN;
+    } else if (nHeight < 25228800) {
+        nSubsidy = 625 * COIN;
     } else {
         nSubsidy >>= (nHeight / 306600); // SPbCoin: 306600 blocks in ~2 years
     }
@@ -1087,8 +1087,8 @@ int64 static GetBlockValue(int nHeight, int64 nFees)
 
 // Protocol 1 & 2
 
-static const int64 nTargetTimespan = 86184; //420 * 205.2; = 86184 // SPbCoin: 420 blocks
-static const int64 nTargetSpacing = 205;//3.42 * 60; // SPbCoin: 3.42 minutes
+static const int64 nTargetTimespan = 2400; //420 * 205.2; = 86184 // SPbCoin: 120 --- 420 blocks
+static const int64 nTargetSpacing = 20;//20 sec ---3.42 * 60; // SPbCoin: 3.42 minutes
 static const int64 nInterval = nTargetTimespan / nTargetSpacing;
 
 static const int nDifficultySwitchHeight = 15420;
@@ -1185,7 +1185,7 @@ unsigned int ComputeMinWork(unsigned int nBase, int64 nTime)
 
 unsigned int static NeoGetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHeader *pblock)
 {
-    static const int64 BlocksTargetSpacing = 3 * 60; // 3 minutes
+    static const int64 BlocksTargetSpacing = 60 / 3; //3 * 60; //20 sec --- 3 minutes
     unsigned int TimeDaySeconds = 60 * 60 * 24;
     int64 PastSecondsMin = TimeDaySeconds * 0.25;
     int64 PastSecondsMax = TimeDaySeconds * 7;
@@ -1205,7 +1205,7 @@ unsigned int static OldGetNextWorkRequired(const CBlockIndex* pindexLast, const 
 
     //SPbCoin difficulty adjustment protocol switch (Thanks to FeatherCoin for this idea)
 
-    static const int newTargetTimespan = 2050;
+    static const int newTargetTimespan = 30; //2050;
     int nHeight = pindexLast->nHeight + 1;
     bool fNewDifficultyProtocol = (nHeight >= nDifficultySwitchHeight || fTestNet);
     bool fNewDifficultyProtocol2 = (nHeight >= nDifficultySwitchHeight2 || fTestNet);
@@ -1220,7 +1220,7 @@ unsigned int static OldGetNextWorkRequired(const CBlockIndex* pindexLast, const 
     }
     int64 nInterval = nTargetTimespanCurrent / nTargetSpacing;
 
-    if (fTestNet && nHeight < (newTargetTimespan/205)+1) {
+    if (fTestNet && nHeight < (newTargetTimespan/3)+1) {
         return pindexLast->nBits;
     }
 
@@ -1239,7 +1239,7 @@ unsigned int static OldGetNextWorkRequired(const CBlockIndex* pindexLast, const 
 
     // Go back by what we want to be 14 days worth of blocks
     const CBlockIndex* pindexFirst = pindexLast;
-    blockstogoback = fNewDifficultyProtocol2 ? (newTargetTimespan/205) : blockstogoback;
+    blockstogoback = fNewDifficultyProtocol2 ? (newTargetTimespan/3) : blockstogoback;
     for (int i = 0; pindexFirst && i < blockstogoback; i++)
         pindexFirst = pindexFirst->pprev;
     assert(pindexFirst);
@@ -2911,7 +2911,7 @@ bool InitBlockIndex() {
         }
 
 		// temporary code for finding nonce for genesis, should be removed later on
-		/*uint256 hashTarget = CBigNum().SetCompact(block.nBits).getuint256();	
+		uint256 hashTarget = CBigNum().SetCompact(block.nBits).getuint256();	
 		printf("hash target %s\n", hashTarget.ToString().c_str());		
 		while(true)
         {
@@ -2930,7 +2930,7 @@ bool InitBlockIndex() {
             }
         }
         printf("block.nTime = %u \n", block.nTime);
-        printf("block.nNonce = %u \n", block.nNonce);	*/
+        printf("block.nNonce = %u \n", block.nNonce);	
 
 		/////////////////////////////////////////////////////////////
 
