@@ -11,7 +11,7 @@
 
 #include "main.h"
 #include "uint256.h"
-
+/*
 namespace Checkpoints
 {
     typedef std::map<int, uint256> MapCheckpoints;
@@ -29,7 +29,7 @@ namespace Checkpoints
         int64 nTransactionsLastCheckpoint;
         double fTransactionsPerDay;
     };
-
+*/
     // What makes a good checkpoint block?
     // + Is surrounded by blocks with reasonable timestamps
     //   (no blocks before with a timestamp after, none after with
@@ -76,7 +76,7 @@ namespace Checkpoints
     //    else
     //        return data;
     //}
-
+/*
     bool CheckBlock(int nHeight, const uint256& hash)
     {
         if (fTestNet) return true; // Testnet has no checkpoints
@@ -149,4 +149,4 @@ namespace Checkpoints
         }
         return NULL;
     }
-}
+} */
