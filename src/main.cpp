@@ -2911,26 +2911,26 @@ bool InitBlockIndex() {
         }
 
 		// temporary code for finding nonce for genesis, should be removed later on
-		//uint256 hashTarget = CBigNum().SetCompact(block.nBits).getuint256();	
-		//printf("hash target %s\n", hashTarget.ToString().c_str());		
-		//while(true)
-        //{
-        //    auto thash = block.GetHash();
-        //    if (thash <= hashTarget)
-        //        break;
-        //    if ((block.nNonce & 0xFFF) == 0)
-        //    {
-        //        printf("nonce %08X: hash = %s (target = %s)\n", block.nNonce, thash.ToString().c_str(), hashTarget.ToString().c_str());
-        //    }
-        //    ++block.nNonce;
-        //    if (block.nNonce == 0)
-        //    {
-        //        printf("NONCE WRAPPED, incrementing time\n");
-        //        ++block.nTime;
-        //    }
-        //}
-        //printf("block.nTime = %u \n", block.nTime);
-        //printf("block.nNonce = %u \n", block.nNonce);	
+		uint256 hashTarget = CBigNum().SetCompact(block.nBits).getuint256();	
+		printf("hash target %s\n", hashTarget.ToString().c_str());		
+		while(true)
+        {
+            auto thash = block.GetHash();
+            if (thash <= hashTarget)
+                break;
+            if ((block.nNonce & 0xFFF) == 0)
+            {
+                printf("nonce %08X: hash = %s (target = %s)\n", block.nNonce, thash.ToString().c_str(), hashTarget.ToString().c_str());
+            }
+            ++block.nNonce;
+            if (block.nNonce == 0)
+            {
+                printf("NONCE WRAPPED, incrementing time\n");
+                ++block.nTime;
+            }
+        }
+        printf("block.nTime = %u \n", block.nTime);
+        printf("block.nNonce = %u \n", block.nNonce);	
 
 		/////////////////////////////////////////////////////////////
 
