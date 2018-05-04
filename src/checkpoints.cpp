@@ -11,7 +11,7 @@
 
 #include "main.h"
 #include "uint256.h"
-/*
+
 namespace Checkpoints
 {
     typedef std::map<int, uint256> MapCheckpoints;
@@ -35,48 +35,48 @@ namespace Checkpoints
     //   (no blocks before with a timestamp after, none after with
     //    timestamp before)
     // + Contains no strange transactions
-    //static MapCheckpoints mapCheckpoints = 
+    static MapCheckpoints mapCheckpoints = ;
         //boost::assign::map_list_of
-        //(1, uint256(""))
-        /*(7, uint256("0x00000ae8c47fc4e0498d1c569eeaa05a4c2214ef95cbef2c2906e2daf78c2c6b"))
-		(777, uint256("0x0000062829795a3ffc0ae5e0f7fe5327fb134c9844b3d3755a1619f378be2de4"))
-        (7777, uint256("0x0000003182844de51e83b4daa24a874c551bab3ca7d6df3722d126a81f9402b9"))
-        (15417, uint256("0x0000000960989066e7b49fe2057a7c4e0f9371818d0de4767a2735f9fea0e1be"))
-        (21578, uint256("0x0000000197f21c5455310f0eb87059fcf695383165e76e7eac0f0535c6912015"))
-	    (62154, uint256("0x00000000588924cd98e8d11d3ad4a4d2b5dca62274e0c18390f4f903da781469"))
-        (77778, uint256("0x00000000133e30988f573c4eb972c095964fbfde1ccc3300bd5485ccd05e320d"))
-		(83139, uint256("0x0000000007f44e6aa08e8950851780efaa3bf40590590f31ed753c22f56e0de3"))
-        (100000, uint256("0x00000000016f41b554c35a3366984ba8d6b04f388d1683caeb71b520c2a7e540"))*/
+        //(0, uint256(""))
+        //(100, uint256("0x00000ae8c47fc4e0498d1c569eeaa05a4c2214ef95cbef2c2906e2daf78c2c6b"))
+		//(777, uint256("0x0000062829795a3ffc0ae5e0f7fe5327fb134c9844b3d3755a1619f378be2de4"))
+        //(7777, uint256("0x0000003182844de51e83b4daa24a874c551bab3ca7d6df3722d126a81f9402b9"))
+        //(15417, uint256("0x0000000960989066e7b49fe2057a7c4e0f9371818d0de4767a2735f9fea0e1be"))
+        //(21578, uint256("0x0000000197f21c5455310f0eb87059fcf695383165e76e7eac0f0535c6912015"))
+	    //(62154, uint256("0x00000000588924cd98e8d11d3ad4a4d2b5dca62274e0c18390f4f903da781469"))
+        //(77778, uint256("0x00000000133e30988f573c4eb972c095964fbfde1ccc3300bd5485ccd05e320d"))
+		//(83139, uint256("0x0000000007f44e6aa08e8950851780efaa3bf40590590f31ed753c22f56e0de3"))
+        //(100000, uint256("0x00000000016f41b554c35a3366984ba8d6b04f388d1683caeb71b520c2a7e540"))*/
         /*(106000, uint256("0xbe27545eb8ea31c74878b54d500161873ed035afc2fa1f4e7cfa7e84a232b8f9"))
 	(112800, uint256("0x4dbecbf0368b99c80da8406693f370b754f78a7b6d139a878bc69fb961f86383"))*/
         //;
-    //static const CCheckpointData data = {
-        //&mapCheckpoints,
-		//1525447971, // * UNIX timestamp of last checkpoint block
-        //1,    // * total number of transactions between genesis and last checkpoint
+    static const CCheckpointData data = {
+        &mapCheckpoints,
+		1525447971, // * UNIX timestamp of last checkpoint block
+        1,    // * total number of transactions between genesis and last checkpoint
                     //   (the tx=... number in the SetBestChain debug.log lines)
-        //500.0     // * estimated number of transactions per day after checkpoint
-    //};
+        500.0     // * estimated number of transactions per day after checkpoint
+    };
 
-    //static MapCheckpoints mapCheckpointsTestnet = 
-    //    boost::assign::map_list_of
-    //    (   5046, uint256("000000002a936ca763904c3c35fce2f3556c559c0214345d31b1bcebf76acb70"))
-    //    ( 35000, uint256("2af959ab4f12111ce947479bfcef16702485f04afd95210aa90fde7d1e4a64ad"))
-    //    ;
-    //static const CCheckpointData dataTestnet = {
-    //    &mapCheckpointsTestnet,
-    //    1369685559,
-    //    37581,
-    //    300
-    //};
+    static MapCheckpoints mapCheckpointsTestnet = 
+        boost::assign::map_list_of
+        (   5046, uint256("000000002a936ca763904c3c35fce2f3556c559c0214345d31b1bcebf76acb70"))
+        ( 35000, uint256("2af959ab4f12111ce947479bfcef16702485f04afd95210aa90fde7d1e4a64ad"))
+        ;
+    static const CCheckpointData dataTestnet = {
+        &mapCheckpointsTestnet,
+        1369685559,
+        37581,
+        300
+    };
 
-    //const CCheckpointData &Checkpoints() {
-    //    if (fTestNet)
-    //        return dataTestnet;
-    //    else
-    //        return data;
-    //}
-/*
+    const CCheckpointData &Checkpoints() {
+        if (fTestNet)
+            return dataTestnet;
+        else
+            return data;
+    }
+
     bool CheckBlock(int nHeight, const uint256& hash)
     {
         if (fTestNet) return true; // Testnet has no checkpoints
@@ -149,4 +149,4 @@ namespace Checkpoints
         }
         return NULL;
     }
-} */
+} 
