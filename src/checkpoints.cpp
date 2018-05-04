@@ -70,12 +70,12 @@ namespace Checkpoints
         300
     };
 
-    const CCheckpointData &Checkpoints() {
-        if (fTestNet)
-            return dataTestnet;
-        else
-            return data;
-    }
+    //const CCheckpointData &Checkpoints() {
+    //    if (fTestNet)
+    //        return dataTestnet;
+    //    else
+    //        return data;
+    //}
 
     bool CheckBlock(int nHeight, const uint256& hash)
     {
