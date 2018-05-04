@@ -1205,7 +1205,7 @@ unsigned int static OldGetNextWorkRequired(const CBlockIndex* pindexLast, const 
 
     //SPbCoin difficulty adjustment protocol switch (Thanks to FeatherCoin for this idea)
 
-    static const int newTargetTimespan = 30; //2050;
+    static const int newTargetTimespan = 2050; //2050;
     int nHeight = pindexLast->nHeight + 1;
     bool fNewDifficultyProtocol = (nHeight >= nDifficultySwitchHeight || fTestNet);
     bool fNewDifficultyProtocol2 = (nHeight >= nDifficultySwitchHeight2 || fTestNet);
