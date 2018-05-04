@@ -29,7 +29,7 @@ namespace Checkpoints
         int64 nTransactionsLastCheckpoint;
         double fTransactionsPerDay;
     };
-*/
+
     // What makes a good checkpoint block?
     // + Is surrounded by blocks with reasonable timestamps
     //   (no blocks before with a timestamp after, none after with
