@@ -35,9 +35,9 @@ namespace Checkpoints
     //   (no blocks before with a timestamp after, none after with
     //    timestamp before)
     // + Contains no strange transactions
-    static MapCheckpoints mapCheckpoints =
-        //boost::assign::map_list_of
-        //(1, uint256("0x00000b6205d36905bb7601047acd0133755e3d880b6db795fb0bfc39abdc4e74"))
+    static MapCheckpoints mapCheckpoints = 
+        boost::assign::map_list_of
+        (1, uint256(""))
         /*(7, uint256("0x00000ae8c47fc4e0498d1c569eeaa05a4c2214ef95cbef2c2906e2daf78c2c6b"))
 		(777, uint256("0x0000062829795a3ffc0ae5e0f7fe5327fb134c9844b3d3755a1619f378be2de4"))
         (7777, uint256("0x0000003182844de51e83b4daa24a874c551bab3ca7d6df3722d126a81f9402b9"))
@@ -51,23 +51,23 @@ namespace Checkpoints
 	(112800, uint256("0x4dbecbf0368b99c80da8406693f370b754f78a7b6d139a878bc69fb961f86383"))*/
         ;
     static const CCheckpointData data = {
-        //&mapCheckpoints,
-		//1525447971, // * UNIX timestamp of last checkpoint block
-        //1,    // * total number of transactions between genesis and last checkpoint
+        &mapCheckpoints,
+		1525447971, // * UNIX timestamp of last checkpoint block
+        1,    // * total number of transactions between genesis and last checkpoint
                     //   (the tx=... number in the SetBestChain debug.log lines)
-        //500.0     // * estimated number of transactions per day after checkpoint
+        500.0     // * estimated number of transactions per day after checkpoint
     };
 
     static MapCheckpoints mapCheckpointsTestnet = 
-        //boost::assign::map_list_of
-        //(   5046, uint256("000000002a936ca763904c3c35fce2f3556c559c0214345d31b1bcebf76acb70"))
-        //( 35000, uint256("2af959ab4f12111ce947479bfcef16702485f04afd95210aa90fde7d1e4a64ad"))
+        boost::assign::map_list_of
+        (   5046, uint256("000000002a936ca763904c3c35fce2f3556c559c0214345d31b1bcebf76acb70"))
+        ( 35000, uint256("2af959ab4f12111ce947479bfcef16702485f04afd95210aa90fde7d1e4a64ad"))
         ;
     static const CCheckpointData dataTestnet = {
-        //&mapCheckpointsTestnet,
-        //1369685559,
-        //37581,
-        //300
+        &mapCheckpointsTestnet,
+        1369685559,
+        37581,
+        300
     };
 
     const CCheckpointData &Checkpoints() {
