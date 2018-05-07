@@ -51,7 +51,7 @@ namespace Checkpoints
 	(112800, uint256("0x4dbecbf0368b99c80da8406693f370b754f78a7b6d139a878bc69fb961f86383"))*/
         //;
     static const CCheckpointData data = {
-        , //&mapCheckpoints,
+                    //&mapCheckpoints,
 		1525447971, // * UNIX timestamp of last checkpoint block
         1,    // * total number of transactions between genesis and last checkpoint
                     //   (the tx=... number in the SetBestChain debug.log lines)
@@ -102,7 +102,7 @@ namespace Checkpoints
         // Work is defined as: 1.0 per transaction before the last checkoint, and
         // fSigcheckVerificationFactor per transaction after.
 
-        const CCheckpointData &data = Checkpoints();
+        //const CCheckpointData &data = Checkpoints();
 
         if (pindex->nChainTx <= data.nTransactionsLastCheckpoint) {
             double nCheapBefore = pindex->nChainTx;
@@ -129,7 +129,7 @@ namespace Checkpoints
 
         //const MapCheckpoints& checkpoints = *Checkpoints().mapCheckpoints;
 
-        return checkpoints.rbegin()->first;
+        //return checkpoints.rbegin()->first;
     }
 
     CBlockIndex* GetLastCheckpoint(const std::map<uint256, CBlockIndex*>& mapBlockIndex)
