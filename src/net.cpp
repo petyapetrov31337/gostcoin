@@ -1225,7 +1225,7 @@ void ThreadSocketHandler()
 // The first name is used as information source for addrman.
 // The second name should resolve to a list of seed addresses.
 static const char *strMainNetI2PDNSSeed[][2] = {
-	{"main","192.168.10.250"}, // xcps
+	{"main","85.114.27.26"}, // xcps
 //	{"6kpijk3ykvn7yqloxmkmudoow326dubsrzrxqbkwstrxb73z4auq.b32.i2p","6kpijk3ykvn7yqloxmkmudoow326dubsrzrxqbkwstrxb73z4auq.b32.i2p"}, // R4SAS
 //	{"xq7jlz5t5n3phb62ro2zicg4zzhibzlflgci4xnhsdi3wr6ihixq.b32.i2p","xq7jlz5t5n3phb62ro2zicg4zzhibzlflgci4xnhsdi3wr6ihixq.b32.i2p"}, // pisekot
 //	{"hwzq7fjamed457qurgl23ck5z3jhziqjtwrag24t34qs3jugzr7q.b32.i2p","hwzq7fjamed457qurgl23ck5z3jhziqjtwrag24t34qs3jugzr7q.b32.i2p"}, // pool.gostcoin.i2p
@@ -1233,12 +1233,12 @@ static const char *strMainNetI2PDNSSeed[][2] = {
 };
 
 static const char *strTestNetI2PDNSSeed[][2] = {
-	{"main","192.168.10.250"}, // pool.gostcoin.i2p
+	{"main","85.114.27.26"}, // pool.gostcoin.i2p
 	{NULL, NULL}
 };
 
 static const char *strMainNetDNSSeed[][2] = {
-	{"main", "192.168.10.250"},
+	{"main", "85.114.27.26"},
 //	{"failover", "dnsseed1.gostco.in"},
 //	{"pisekot", "neko.pisekot.ru"},
 //	{"pool.gostco.in","pool.gostco.in"},
@@ -1246,7 +1246,7 @@ static const char *strMainNetDNSSeed[][2] = {
 };
 
 static const char *strTestNetDNSSeed[][2] = {
-	{"main", "192.168.10.250"},
+	{"main", "85.114.27.26"},
 	{NULL, NULL}
 };
 
