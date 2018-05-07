@@ -104,19 +104,19 @@ namespace Checkpoints
 
         //const CCheckpointData &data = Checkpoints();
 
-        if (pindex->nChainTx <= data.nTransactionsLastCheckpoint) {
-            double nCheapBefore = pindex->nChainTx;
-            double nCheapAfter = data.nTransactionsLastCheckpoint - pindex->nChainTx;
-            double nExpensiveAfter = (nNow - data.nTimeLastCheckpoint)/86400.0*data.fTransactionsPerDay;
-            fWorkBefore = nCheapBefore;
-            fWorkAfter = nCheapAfter + nExpensiveAfter*fSigcheckVerificationFactor;
-        } else {
-            double nCheapBefore = data.nTransactionsLastCheckpoint;
-            double nExpensiveBefore = pindex->nChainTx - data.nTransactionsLastCheckpoint;
-            double nExpensiveAfter = (nNow - pindex->nTime)/86400.0*data.fTransactionsPerDay;
-            fWorkBefore = nCheapBefore + nExpensiveBefore*fSigcheckVerificationFactor;
-            fWorkAfter = nExpensiveAfter*fSigcheckVerificationFactor;
-        }
+        //if (pindex->nChainTx <= data.nTransactionsLastCheckpoint) {
+        //    double nCheapBefore = pindex->nChainTx;
+        //    double nCheapAfter = data.nTransactionsLastCheckpoint - pindex->nChainTx;
+        //    double nExpensiveAfter = (nNow - data.nTimeLastCheckpoint)/86400.0*data.fTransactionsPerDay;
+        //    fWorkBefore = nCheapBefore;
+        //    fWorkAfter = nCheapAfter + nExpensiveAfter*fSigcheckVerificationFactor;
+        //} else {
+        //    double nCheapBefore = data.nTransactionsLastCheckpoint;
+        //    double nExpensiveBefore = pindex->nChainTx - data.nTransactionsLastCheckpoint;
+        //    double nExpensiveAfter = (nNow - pindex->nTime)/86400.0*data.fTransactionsPerDay;
+        //    fWorkBefore = nCheapBefore + nExpensiveBefore*fSigcheckVerificationFactor;
+        //    fWorkAfter = nExpensiveAfter*fSigcheckVerificationFactor;
+        //}
 
         return fWorkBefore / (fWorkBefore + fWorkAfter);
     }
