@@ -1087,8 +1087,8 @@ int64 static GetBlockValue(int nHeight, int64 nFees)
 
 // Protocol 1 & 2
 
-static const int64 nTargetTimespan = 86184; //420 * 205.2; = 86184 // SPbCoin: 420 blocks
-static const int64 nTargetSpacing = 205;//3.42 * 60;// SPbCoin: 3.42 minutes
+static const int64 nTargetTimespan = 720; //420 * 205.2; = 86184 // SPbCoin: 420 blocks
+static const int64 nTargetSpacing = 12;//3.42 * 60;// SPbCoin: 3.42 minutes
 static const int64 nInterval = nTargetTimespan / nTargetSpacing;
 
 static const int nDifficultySwitchHeight = 15420;
@@ -1185,7 +1185,7 @@ unsigned int ComputeMinWork(unsigned int nBase, int64 nTime)
 
 unsigned int static NeoGetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHeader *pblock)
 {
-    static const int64 BlocksTargetSpacing = 3 * 60; //60 * 0.2; //3 * 60; //12 sec --- 3 minutes
+    static const int64 BlocksTargetSpacing = 0.2 * 60; //60 * 0.2; //3 * 60; //12 sec --- 3 minutes
     unsigned int TimeDaySeconds = 60 * 60 * 24;
     int64 PastSecondsMin = TimeDaySeconds * 0.25;
     int64 PastSecondsMax = TimeDaySeconds * 7;
